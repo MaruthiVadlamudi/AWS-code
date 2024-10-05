@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 10px;
+            word-wrap: break-word;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin: 15px 0;
+            font-size: 1rem;
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        .download-btn, .logout-btn {
+            background-color: #5ab9ea;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            margin-top: 10px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .download-btn:hover, .logout-btn:hover {
+            background-color: #48a2d8;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="profile-container">
+        <h1>User Profile</h1>
+        <p><strong>Username:</strong> {{ user[1] }}</p>
+        <p><strong>First Name:</strong> {{ user[3] }}</p>
+        <p><strong>Last Name:</strong> {{ user[4] }}</p>
+        <p><strong>Email:</strong> {{ user[5] }}</p>
+        <p><strong>Uploaded File:</strong> {{ user[6] }}</p>
+        <p><strong>Word Count:</strong> {{ user[7] }}</p>
+
+        <a href="/download/{{ user[6] }}" class="download-btn">Download Uploaded File</a>
+        <a href="/" class="logout-btn">Logout</a>
+    </div>
+</body>
+
+</html>
